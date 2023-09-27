@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+
+<div class="section">
+
+    <h2>Your Portfolio</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in balance %}
+            <tr>
+                <td>{{ row.symbol }}</td>
+                <td>{{ row.shares }}</td>
+                <td>{{ row.price }}</td>
+                <td>{{ row.sub_total }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td class="border-0 fw-bold text-end" colspan="3">Cash</td>
+                <td class="border-0 text-end">{{ cash }}</td>
+            </tr>
+            <tr>
+                <td class="border-0 fw-bold text-end" colspan="3">TOTAL</td>
+                <td class="border-0 w-bold text-end">{{ total_usd_balance }}</td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+{% endblock %}

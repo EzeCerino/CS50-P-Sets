@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            function incorrect() {
+                document.querySelector('#ANS').innerHTML = 'Wrong!';
+            }
+
+            function correct(){
+                document.querySelector('#ANS').innerHTML = 'Well Done!';
+            }
+
+            function yourmum() {
+                document.querySelector('#ANS').innerHTML = 'Your MUM!';
+            }
+
+            function check() {
+                if (document.querySelector('#ANSInput').value == 'yes'){
+                    document.querySelector('#ANS2').innerHTML = 'DUDE!';
+                }
+                else {
+                    document.querySelector('#ANS2').innerHTML = 'Try again';
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>What's the best cuntry in the world?</h3>
+                <div id="ANS"></div>
+                <div>
+                    <button type="button" onclick="incorrect()">Brazil</button>
+                    <button type="button" onclick="correct()">Argentina</button>
+                    <button type="button" onclick="incorrect()">USA</button>
+                    <button type="button" onclick="yourmum()">Yoursister</button>
+                    <button type="button" onclick="incorrect()">Argelia</button>
+                    <!-- TODO: Add multiple choice question here -->
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>Are you sure?</h3>
+                <div id="ANS2"></div>
+                <input id="ANSInput" type="text"></input>
+                <button onclick="check()" type="button">Check</button>
+                <!-- TODO: Add free response question here -->
+            </div>
+        </div>
+    </body>
+</html>

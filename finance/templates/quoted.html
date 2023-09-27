@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <div class="lead">
+        The stock price for {{ quoted.name }} is {{ quoted.price }} USD
+    </div>
+{% endblock %}
